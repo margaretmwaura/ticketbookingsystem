@@ -44,6 +44,7 @@ class TicketsController extends Controller
             
        ]);
 
+       $numpresent = Ticket::count();
        
        $name = $request->type;
        $number = $request->num;
@@ -52,21 +53,37 @@ class TicketsController extends Controller
 
        $numberevents = DB::table('created_events')->where('title', $newenentname)->value('number');
 
-       for($i=0 ; $i<$number; $i++)
-       {
-           // Create the ticket row to be sent to database
-       $ticket = new Ticket;
-       $ticket ->name = $request->input('name');
-      $ticket ->email = $request->input('email');
-      $ticket ->tickettype = $request->type;
-      $ticket->eventname = $newenentname;
-      $ticket -> save();
 
+       //All three values are present now
        
-       }
+     $allowed = $numberevents - $numpresent;
+     if($allowed < $number)
+     {
+       //show alert
+       return redirect()->back()->with('message','There are no enough tickets');
+     }
+     else
+     {
+         //book events
+         for($i=0 ; $i<$number; $i++)
+         {
+             // Create the ticket row to be sent to database
+         $ticket = new Ticket;
+         $ticket ->name = $request->input('name');
+        $ticket ->email = $request->input('email');
+        $ticket ->tickettype = $request->type;
+        $ticket->eventname = $newenentname;
+        $ticket -> save();
+  
+         
+         }
+
+         return redirect()->back()->with('message','There are enough tickets');
+     }
+     
 
       
-       return view('createdevents.details', compact('name', 'number','newenentname','numberevents'));
+    //    return view('createdevents.details', compact('name', 'number','newenentname','numberevents','numpresent'));
 
     }
 
