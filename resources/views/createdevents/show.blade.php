@@ -11,6 +11,13 @@
 {{Form::submit('DELETE' , ['class' => 'btn btn-danger'])}}
 {{Form::hidden('_method' ,'DELETE')}}
 {!! Form::close() !!}
+
+
+
+{!! Form::open(['action'=> 'UserNumberController@deleteuseraccount', 'method' =>'POST']) !!}
+{{Form::submit('DELETE ACCOUNT' , ['class' => 'btn btn-danger'])}}
+{{Form::hidden('_method' ,'DELETE')}}
+{!! Form::close() !!}
  
 @else
  <h1>User is not logged in</h1>

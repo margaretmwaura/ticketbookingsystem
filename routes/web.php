@@ -17,7 +17,6 @@ Route::get('/','PagesController@index');
 Route::get('/about', 'PagesController@about');
 Route::resource('createdevents','CreatedEventsController');
 
-
 Auth::routes();
 
 // Route::get('/home', 'HomeController@index')->name('home');
@@ -25,3 +24,4 @@ Auth::routes();
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::delete('user','UserNumberController@deleteuseraccount');
