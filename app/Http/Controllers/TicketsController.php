@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use DB;
 use Illuminate\Http\Request;
+use App\CreatedEvent;
+use App\Ticket;
 
 class TicketsController extends Controller
 {
@@ -32,9 +35,39 @@ class TicketsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request )
     {
-        //
+        
+        $this->validate($request,[
+            'name' => 'required',
+            'email' => 'required'          
+            
+       ]);
+
+       
+       $name = $request->type;
+       $number = $request->num;
+       $newenentname = $request->input('eventname');
+       $number = $number + 1;
+
+       $numberevents = DB::table('created_events')->where('title', $newenentname)->value('number');
+
+       for($i=0 ; $i<$number; $i++)
+       {
+           // Create the ticket row to be sent to database
+       $ticket = new Ticket;
+       $ticket ->name = $request->input('name');
+      $ticket ->email = $request->input('email');
+      $ticket ->tickettype = $request->type;
+      $ticket->eventname = $newenentname;
+      $ticket -> save();
+
+       
+       }
+
+      
+       return view('createdevents.details', compact('name', 'number','newenentname','numberevents'));
+
     }
 
     /**
