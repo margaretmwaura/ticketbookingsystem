@@ -53,9 +53,6 @@
                           <li class="nav-item">
                             <a class="nav-link" href="/tbapp/public/about">About</a>
                           </li>
-                          <li class="nav-item">
-                            <a class="nav-link" href="/tbapp/public/createdevents/create">{{ app('App\Http\Controllers\UserNumberController')->number_of_users() }}</a>
-                          </li>
                           <li class="nav-item active">
                             <a class="nav-link" href="/tbapp/public/createdevents">Events</a>
                           </li>
