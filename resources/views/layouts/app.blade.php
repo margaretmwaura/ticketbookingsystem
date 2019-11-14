@@ -66,7 +66,7 @@
                             <a class="nav-link" href="/tbapp/public/">Home</a>
                           </li>
                           <li class="nav-item">
-                            <a class="nav-link" href="/tbapp/public/about">About</a>
+                            <a class="nav-link" href="/tbapp/public/#title">About</a>
                           </li>
                           <li class="nav-item active">
                             <a class="nav-link" href="/tbapp/public/createdevents">Events</a>
