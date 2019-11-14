@@ -55,7 +55,7 @@ class TicketsController extends Controller
          } 
          
           $this->basic_email($ticket->name,$ticket->tickettype,$ticket->eventname,$ticket->email);
-         return redirect()->back()->with('success','There are enough tickets');
+         return redirect()->back()->with('success','You have succesfully booked your event tickets , an email will be sent to you');
      }
      
 
