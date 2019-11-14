@@ -60,12 +60,12 @@ class TicketsController extends Controller
      if($allowed < $number)
      {
        //show alert
-       return redirect()->back()->with('message','There are no enough tickets');
+       return redirect()->back()->with('error','There are no enough tickets , tickets remaining are ' . $allowed ." ");
      }
      else
      {
          //book events
-         for($i=0 ; $i<$number; $i++)
+         for($i=1 ; $i <= $number; $i++)
          {
              // Create the ticket row to be sent to database
          $ticket = new Ticket;
@@ -78,7 +78,7 @@ class TicketsController extends Controller
          
          } 
 
-         return redirect()->back()->with('message','There are enough tickets');
+         return redirect()->back()->with('success','There are enough tickets');
      }
      
 

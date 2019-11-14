@@ -32,7 +32,6 @@
     use App\Http\Controllers\UserNumberController;
     $num = UserNumberController::number_of_users();
 @endphp
-
 <body>
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
@@ -122,6 +121,7 @@
             </div>
         </nav>
 
+        @include('inc.messages')
         <main class="py-4">
             @yield('content')
         </main>
