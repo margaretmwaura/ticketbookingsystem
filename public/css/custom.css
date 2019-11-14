@@ -398,3 +398,26 @@ background-color:rgb(179,100,50)!important;
    color: white;
   border-bottom: 15px solid white;
 }
+
+.eventdetails
+{
+ 
+    width: 600px;
+    height: 300px;
+    position: absolute;
+    left: 50%;
+    top: 40%;
+    float: right;
+    transform: translate(-50%, -50%);
+    
+}
+#eventtitle
+{
+    margin-top: 50px;
+}
+.eventinfo
+{
+    margin-left: 30px;
+    font-weight: bold;
+    color: #000;
+}

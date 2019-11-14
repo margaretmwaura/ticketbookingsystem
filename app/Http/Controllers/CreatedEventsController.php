@@ -16,7 +16,7 @@ class CreatedEventsController extends Controller
     {
         //
         $createdevents =  CreatedEvent::orderBy('time','desc')->paginate(1);
-        return view('createdevents.index')->with('createdevents',$createdevents);
+        return view('createdevents.events')->with('createdevents',$createdevents);
     }
 
     /**

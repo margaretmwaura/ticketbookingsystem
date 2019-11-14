@@ -89,7 +89,7 @@
                             </li>
                           
  <!-- No need for the round brackets -->
-                            @if(app('App\Http\Controllers\UserNumberController')->number_of_users() >=1 )
+                            @if(app('App\Http\Controllers\UserNumberController')->number_of_users() >=2 )
                                
 
                                 <li class="nav-item">
