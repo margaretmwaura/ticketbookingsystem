@@ -421,3 +421,77 @@ background-color:rgb(179,100,50)!important;
     font-weight: bold;
     color: #000;
 }
+.createevent
+{
+    width: 600px;
+    height: 300px;
+    position: absolute;
+    left: 50%;
+    top: 40%;
+    float: right;
+    transform: translate(-50%, -50%);
+}
+label
+{
+    font-weight: bold;
+    color: #000;
+    font-size: 1.00rem;
+    
+}
+.submit
+{
+    font-weight: bold;
+    color: #000;
+    font-size: 1.00rem;
+    background-color: crimson;
+}
+.eventcenter
+{
+    font-weight: bold;
+    color: #000;
+    font-size: 1.25rem;
+    margin-left: 600px;
+    margin-top: 20px;
+    
+}
+.createeventtwo
+{
+    width: 600px;
+    height: 300px;
+   margin-left: 500px;
+}
+.back
+{
+    font-weight: bold;
+    color: #fff;
+    font-size: 1.00rem;
+    margin-left: 50px;
+    background-color: crimson;
+}
+.edit
+{
+    font-weight: bold;
+    color: #fff;
+    
+    font-size: 1.00rem;
+    margin-left: 80px;
+    background-color: crimson;
+}
+.delete
+{
+    font-weight: bold;
+    color: #fff;
+    margin-top: 10px;
+    font-size: 1.00rem;
+    margin-left: 80px;
+    background-color: #000;
+}
+.account
+{
+    font-weight: bold;
+    color: #fff;
+    margin-top: 10px;
+    font-size: 1.00rem;
+    margin-left: 80px;
+    background-color: #FF0000;
+}

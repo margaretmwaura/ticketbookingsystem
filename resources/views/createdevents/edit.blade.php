@@ -1,7 +1,9 @@
 @extends('layouts.app')
 @section('content')
-<h3>Edit this event</h3>
 
+
+<div class="createevent">
+        <label><i>Edit this event </i></label>
 {!! Form::open(['action'=> ['CreatedEventsController@update' , $createdevent->id ], 'method' =>'POST']) !!}
     <div class ="form-group">
         {{Form::label('title','Title')}}
@@ -33,7 +35,8 @@
         {{Form::text('number',$createdevent ->number)}}
     </div>
     {{Form::hidden('_method' ,'PUT')}}
-    {{Form::submit('Submit')}}
+    {{Form::submit('Submit',['class' => "submit"])}}
     {!! Form::close() !!}
 
+</div>
 @endsection

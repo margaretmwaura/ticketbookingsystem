@@ -1,24 +1,24 @@
 @extends('layouts.app')
 @section('content')
 
-<a href="/tbapp/public/createdevents" class="btn btn-default">Go back</a>
+<a href="/tbapp/public/createdevents" class="back"> Go back</a>
 
 
-<h3>{{$createdevent->title}}</h3>
+<h3 class="eventcenter">Event Name : <i>{{$createdevent->title}}</i></h3>
 
 
 @if (Auth::check())
-<a href="/tbapp/public/createdevents/{{$createdevent -> id}}/edit" class="btn btn-default">Edit</a>
+<a href="/tbapp/public/createdevents/{{$createdevent -> id}}/edit" class="edit">Edit</a>
 
 {!! Form::open(['action'=> ['CreatedEventsController@destroy'  , $createdevent -> id], 'method' =>'POST']) !!}
-{{Form::submit('DELETE' , ['class' => 'btn btn-danger'])}}
+{{Form::submit('DELETE EVENT' , ['class' => 'delete'])}}
 {{Form::hidden('_method' ,'DELETE')}}
 {!! Form::close() !!}
 
 
 
 {!! Form::open(['action'=> 'UserNumberController@deleteuseraccount', 'method' =>'POST']) !!}
-{{Form::submit('DELETE ACCOUNT' , ['class' => 'btn btn-danger'])}}
+{{Form::submit('DELETE ACCOUNT' , ['class' => 'account'])}}
 {{Form::hidden('_method' ,'DELETE')}}
 {!! Form::close() !!}
  
@@ -32,6 +32,8 @@
 
 <!-- This is the form for booking tickets -->
 
+<div class="createeventtwo">
+        <h3>Book a ticket for the event</h3>
 {!! Form::open(['action'=> 'TicketsController@store', 'method' =>'POST']) !!}
     <div class ="form-group">
         {{Form::label('name','Name')}}
@@ -57,7 +59,7 @@
         {{Form::label('name','This is the event you are bookiing')}}
         {{Form::text('eventname',$createdevent->title )}}
     </div>
-{{Form::submit('Submit')}}
+{{Form::submit('Submit',['class' => "submit"])}}
 {!! Form::close() !!}
-
+</div>
 @endsection

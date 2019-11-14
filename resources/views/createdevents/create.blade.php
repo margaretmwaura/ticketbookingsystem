@@ -1,7 +1,9 @@
 @extends('layouts.app')
 @section('content')
-<h3>Enter a new event</h3>
 
+
+<div class="createevent">
+        <label><i>Create a new event</i></label>
 {!! Form::open(['action'=> 'CreatedEventsController@store' , 'method' =>'POST']) !!}
     <div class ="form-group">
         {{Form::label('title','Title')}}
@@ -10,7 +12,6 @@
     <div class ="form-group">
         {{Form::label('description','Event Description')}}
         {{Form::textarea('description',' ' , ['id' => "editor" , 'name' => "editor"])}}
-        {{-- <script>CKEDITOR.replace( 'editor',{height: 500});</script> --}}
     </div>
     <div class ="form-group">
         {{Form::label('place','Event place venue')}}
@@ -32,7 +33,7 @@
         {{Form::label('number','Number of people accepted at event')}}
         {{Form::text('number',' ')}}
     </div>
-    {{Form::submit('Submit')}}
+    {{Form::submit('Submit',['class' => "submit"]) }}
 {!! Form::close() !!}
-
+</div>
 @endsection
