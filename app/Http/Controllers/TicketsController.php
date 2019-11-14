@@ -76,7 +76,7 @@ class TicketsController extends Controller
         $ticket -> save();
   
          
-         }
+         } 
 
          return redirect()->back()->with('message','There are enough tickets');
      }
